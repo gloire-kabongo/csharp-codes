@@ -15,19 +15,11 @@ namespace ToDoListExemple
                 new ToDoItem(2, "Faire du sport")
             };
 
-
-
             var todoList = new ToDoList("Hertzy", todos);
 
             var newId = todoList.AddTodo("Courir");
             var todo = todoList.GetById(newId);
             Console.WriteLine(todo);
-
-            var idList = todos
-                .Select(t => t.Id)
-                .Max();
-
-            Console.WriteLine(idList);
         }
     }
 }
