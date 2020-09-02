@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using ToDoListExemple.Exceptions;
 
 namespace ToDoListExemple.Models
 {
@@ -16,7 +18,7 @@ namespace ToDoListExemple.Models
 
         public string Username { get; set; }
 
-        public int AddTodo(string task)
+        public int AddTodoItem(string task)
         {
             nextId = toDoItems
                 .Select(t => t.Id)
@@ -26,11 +28,21 @@ namespace ToDoListExemple.Models
             return nextId;
         }
 
+        public void DeleteToDoItem(int id)
+        {
+                var item = GetById(id);
+                if (item == null)
+                {
+                    throw new NotFoundException(nameof(ToDoItem), id);
+                }
+                toDoItems.Remove(item);
+        }
+
         public ToDoItem GetById(int id) =>
             toDoItems
                 .FirstOrDefault(t => t.Id == id);
 
-        public List<ToDoItem> GetDoItems(bool includeCompleted)
+        public List<ToDoItem> GetToDoItems(bool includeCompleted)
         {
             return toDoItems.Where(t => includeCompleted || !t.IsCompleted)
                 .ToList();
@@ -46,7 +58,7 @@ namespace ToDoListExemple.Models
         public (int Total, int Incompleted) GetItemCounts()
         {
             var total = toDoItems.Count;
-            var incompleted = GetDoItems(false).Count;
+            var incompleted = GetToDoItems(false).Count;
 
             return (total, incompleted);
         }

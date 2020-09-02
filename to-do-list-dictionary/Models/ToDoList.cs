@@ -12,6 +12,10 @@ namespace ToDoListExemple.Models
             Username = username;
 
             map = toDoItems.ToDictionary(key => key.Id, value => value);
+            // foreach (var item in toDoItems)
+            // {
+            //     map.Add(item.Id, item);
+            // }
         }
 
         public string  Username { get; set; }
