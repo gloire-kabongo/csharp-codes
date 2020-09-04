@@ -1,6 +1,6 @@
 namespace LibraryManager.Models
 {
-    class Manuel : Livre
+    public class Manuel : Livre
     {
         public int NiveauScolaire { get; set; }
 
@@ -15,6 +15,6 @@ namespace LibraryManager.Models
         }
 
         public override string ToString() =>
-            $"{base.ToString()} - {NiveauScolaire}";
+            $"{base.ToString()} - Niveau scolaire: {NiveauScolaire}";
     }
 }

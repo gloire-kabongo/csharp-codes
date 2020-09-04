@@ -15,6 +15,6 @@ namespace LibraryManager.Models
         public int PrixLitteraire { get; set; }
 
         public override string ToString() =>
-            $"{base.ToString()} - {PrixLitteraire}";
+            $"{base.ToString()} - Prix litteraire: {PrixLitteraire}";
     }
 }

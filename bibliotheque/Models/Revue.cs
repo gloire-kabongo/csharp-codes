@@ -16,6 +16,6 @@ namespace LibraryManager.Models
         public int Année { get; set; }
 
         public override string ToString() =>
-            $"{base.ToString()} - {Mois} - {Année}";
+            $"{base.ToString()} - Mois: {Mois} - Année: {Année}";
     }
 }

@@ -12,6 +12,6 @@ namespace LibraryManager.Models
         public string Titre { get; set; }
 
         public override string ToString() =>
-            $"{NumeroEnregistrement} - {Titre}";
+            $"No {NumeroEnregistrement} - Titre: {Titre}";
     }
 }

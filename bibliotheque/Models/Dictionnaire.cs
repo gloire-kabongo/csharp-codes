@@ -13,6 +13,6 @@ namespace LibraryManager.Models
         public string Langue { get; set; }
 
         public override string ToString() =>
-            $"{base.ToString()} - {Langue}";
+            $"{base.ToString()} - Langue: {Langue}";
     }
 }

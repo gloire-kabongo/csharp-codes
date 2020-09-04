@@ -16,6 +16,6 @@ namespace LibraryManager.Models
         public int NombreDePages { get; set; }
 
         public override string ToString() =>
-            $"{base.ToString()} - {Auteur} - {NombreDePages}";
+            $"{base.ToString()} - Auteur: {Auteur} - Pages: {NombreDePages}";
     }
 }
