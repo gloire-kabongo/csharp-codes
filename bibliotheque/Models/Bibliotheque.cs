@@ -52,7 +52,7 @@ namespace LibraryManager.Models
             foreach (var document in documents)
             {
                 if (document is Livre livre)
-                    auteurs.Add(livre.Auteur);
+                    auteurs.Add(livre.GetAuteurs());
             }
             return auteurs;
         }

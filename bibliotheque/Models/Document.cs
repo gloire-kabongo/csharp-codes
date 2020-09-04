@@ -5,6 +5,9 @@ namespace LibraryManager.Models
         public Document(int numeroEnregistrement, string titre)
         {
             NumeroEnregistrement = numeroEnregistrement;
+
+            if (string.IsNullOrEmpty(titre))
+                throw new System.ArgumentException("Le titre est null", nameof(titre));
             Titre = titre;
         }
 

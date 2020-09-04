@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LibraryManager.Models
 {
     public class Manuel : Livre
@@ -6,10 +8,10 @@ namespace LibraryManager.Models
 
         public Manuel(int numeroEnregistrement,
             string titre,
-            string auteur,
+            List<Auteur> auteurs,
             int nombreDePages,
             int niveauScolaire)
-                : base(numeroEnregistrement, titre, auteur, nombreDePages)
+                : base(numeroEnregistrement, titre, auteurs, nombreDePages)
         {
             NiveauScolaire = niveauScolaire;
         }
