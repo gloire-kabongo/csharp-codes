@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace LibraryManager.Models
 {
@@ -6,6 +7,8 @@ namespace LibraryManager.Models
     {
         private int _numeroEnregistrement;
         private string _titre;
+        private List<Avis> _avis = new List<Avis>();
+
 
         public Document(int numeroEnregistrement, string titre)
         {
@@ -29,5 +32,12 @@ namespace LibraryManager.Models
             get { return _numeroEnregistrement; }
             set { _numeroEnregistrement = value; }
         }
+
+        public List<Avis> Avis => _avis;
+
+        public override string ToString() =>
+            $"No {NumeroEnregistrement} \nTitre: {Titre}";
+
+        public void AddAvis(Avis avis) => _avis.Add(avis);
     }
 }
