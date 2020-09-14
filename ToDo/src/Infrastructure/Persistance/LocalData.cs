@@ -25,6 +25,6 @@ namespace Todo.Infrastructure.Persistance
         public List<TodoList> GetAll() => lists;
 
         public TodoList GetByUsername(string username) =>
-            lists.FirstOrDefault(i => i.Username == username);
+             lists.FirstOrDefault(l => l.Username == username);
     }
 }
