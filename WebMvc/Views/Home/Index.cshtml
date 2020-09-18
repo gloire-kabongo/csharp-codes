@@ -1,0 +1,19 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Home Page";
+
+    var fullname = $"{Model.GivenName} {Model.Name}";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+@{
+    int add (int a, int b) => a + b;
+}
+
+<p>@add(6, 9)</p>
+<p>@fullname</p>

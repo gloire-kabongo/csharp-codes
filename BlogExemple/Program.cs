@@ -11,8 +11,8 @@ namespace BlogExemple
         static void Main(string[] args)
         {
             //AddPost();
-            GetPosts();
-            //GetPostById(3);
+            //GetPosts();
+            GetPostById(3);
         }
 
         static void AddPost()
